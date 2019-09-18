@@ -51,7 +51,7 @@
                 "mode": "replace",
                 "imageSuffix":"jpg"
                 "replaceSearchValue": ".html",
-                "replaceValue": "_{page}.html",
+                "replaceValue":"_{page}.html",
                 "addValue": "{page}.html"
             }, 
             "lastPage": {
