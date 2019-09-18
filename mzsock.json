@@ -50,8 +50,8 @@
                 "incrementMode": "image",
                 "mode": "replace",
                 "imageSuffix":"jpg"
-                "replaceSearchValue":".html",
-                "replaceValue":"_{page}.html",
+                "replaceSearchValue": ".html",
+                "replaceValue": "_{page}.html",
                 "addValue": "{page}.html"
             }, 
             "lastPage": {
