@@ -1,0 +1,67 @@
+[{
+        "name": "mzsock",
+        "key":"mzsock",
+        "url": "http://mzsock.com",
+        "tags": [ 
+            {"name": "棉袜", "url": "http://mzsock.com/mv/"},
+			{"name": "船袜", "url": "http://mzsock.com/cy/"},
+			{"name": "丝袜", "url": "http://mzsock.com/sw/"},
+			{"name": "裸足", "url": "http://mzsock.com/lz/"},
+			{"name": "帆布鞋", "url": "http://mzsock.com/fbx/"},
+			{"name": "运动鞋", "url": "http://mzsock.com/ydx/"},
+			{"name": "人字拖", "url": "http://mzsock.com/rzt/"},
+			{"name": "美脚自拍", "url": "http://mzsock.com/cwzp/"},
+        ], 
+        "pages": { 
+            "element": "body > div.recent-article cl > ul > li",
+            "name": { 
+                "element": "p.p_title > p", 
+                "attr": "@text"
+            },
+            "url": { 
+                "element": "p.p_title > a",
+                "attr": "href",
+                "needMerge": true,
+            },
+            "nextPageUrlMode": {
+                "mode": "add",
+                "replaceSearchValue": ".html",
+                "replaceValue": "_{page}.html",
+                "addValue": "{page}.html"
+            }, 
+            "lastPage": {
+                "element": "#pages > a",
+                "minPageLength": 2,
+                "attr": "@text",
+                "descIndex": 2,
+                "isNeedSplit": false,
+                "splits": [
+                    {"str":"_","index":2},
+                    {"str":".","index":0}
+                 ]
+            }
+        }, 
+        "imgs": {
+            "element": "body > div.content > center > img",
+            "attr":"href",
+            "singlePage":true,
+            "urlNeedMerge": true,
+            "nextPageUrlMode": {
+                "incrementMode": "image",
+                "mode": "replace",
+                "imageSuffix":"jpg"
+                "replaceSearchValue": ".html",
+                "replaceValue": "_{page}.html",
+                "addValue": "{page}.html"
+            }, 
+            "lastPage": {
+                "element": "#pages > a", 
+                "minPageLength": 2, 
+                "attr": "@text", 
+                "descIndex": 2, 
+                "isNeedSplit": false, 
+                "splits": []
+            }
+        }, 
+        "supportReptileVersion": 1
+    }]
