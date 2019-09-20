@@ -18,44 +18,17 @@
                 "element": "p.p_title > p", 
                 "attr": "@text"
             },
-            "url": { 
-                "element": "p.p_title > a",
+            "url": {
+                "element": "a",
                 "attr": "href",
-                "needMerge": true,
+                "needMerge": true
             },
             "nextPageUrlMode": {
-                "mode": "add",
-                "replaceSearchValue": ".html",
-                "replaceValue": "_{page}.html",
-                "addValue": "{page}.html"
+                "mode": "add", 
+                "addValue": "/index_{page}.html"
             }, 
             "lastPage": {
-                "element": "#pages > a",
-                "minPageLength": 2,
-                "attr": "@text",
-                "descIndex": 2,
-                "isNeedSplit": false,
-                "splits": [
-                    {"str":"_","index":2},
-                    {"str":".","index":0}
-                 ]
-            }
-        }, 
-        "imgs": {
-            "element": "body > div.content > center > img",
-            "attr":"href",
-            "singlePage":true,
-            "urlNeedMerge": true,
-            "nextPageUrlMode": {
-                "incrementMode": "image",
-                "mode": "replace",
-                "imageSuffix":"jpg"
-                "replaceSearchValue": ".html",
-                "replaceValue": "_{page}.html",
-                "addValue": "{page}.html"
-            }, 
-            "lastPage": {
-                "element": "#pages > a", 
+                "element": ".page a", 
                 "minPageLength": 2, 
                 "attr": "@text", 
                 "descIndex": 2, 
@@ -63,5 +36,18 @@
                 "splits": []
             }
         }, 
-        "supportReptileVersion": 1
-    }]
+        "imgs": {
+            "element": ".photo-pic img", 
+            "urlNeedMerge": true,
+            "singlePage":true,
+            "nextPageUrlMode": {
+                "incrementMode": "page",
+                "mode": "add", 
+                "addValue": ""
+            }, 
+            "lastPage": {
+                "element": "#pages > a"
+            }
+        }, 
+        "supportReptileVersion": 2
+    },
