@@ -17,18 +17,18 @@
             "name": { 
                 "element": "p.p_title > p", 
                 "attr": "@text"
-            },
+ },
             "url": {
                 "element": "a",
                 "attr": "href",
                 "needMerge": true
             },
             "nextPageUrlMode": {
-                "mode": "add", 
-                "addValue": "/index_{page}.html"
+                "mode": "add",  
+                "addValue": ""
             }, 
             "lastPage": {
-                "element": ".page a", 
+                "element": "#pageNum > a", 
                 "minPageLength": 2, 
                 "attr": "@text", 
                 "descIndex": 2, 
@@ -37,16 +37,17 @@
             }
         }, 
         "imgs": {
-            "element": ".photo-pic img", 
-            "urlNeedMerge": true,
-            "singlePage":true,
-            "nextPageUrlMode": {
-                "incrementMode": "page",
-                "mode": "add", 
-                "addValue": ""
-            }, 
-            "lastPage": {
-                "element": "#pages > a"
+            "element": ".gallery img", 
+            "attr":"data-original",
+            "singlePage": true,
+            "imgUrlMode":{
+                "mode":"replace",
+                "addValue": "",
+                "replaceSearchValue": "//", 
+                "replaceValue": "http://"
+            },
+            "nextPageUrlMode": { 
+                "incrementMode": "page"
             }
         }, 
         "supportReptileVersion": 2
